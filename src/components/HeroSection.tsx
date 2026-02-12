@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, MapPin, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const floatingBadges = [
-  { icon: MapPin, text: "Manali, India", color: "bg-indigo-500", delay: 0 },
+  { icon: MapPin, text: "Gilgit, Pakistan", color: "bg-indigo-500", delay: 0 },
   { icon: Star, text: "4.9 Rating", color: "bg-amber-500", delay: 0.3 },
   { icon: Sparkles, text: "AI Powered", color: "bg-blue-500", delay: 0.6 },
 ]
@@ -169,7 +169,7 @@ export default function HeroSection() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-bold text-gray-900">Manali Adventure Trip</p>
+                    <p className="font-bold text-gray-900">Hunza Adventure Trip</p>
                     <p className="text-sm text-gray-500">7 days • June 2025</p>
                   </div>
                   <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center">
@@ -188,7 +188,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center justify-between pt-2 border-t border-gray-100">
                   <div className="text-sm text-gray-500">Estimated Budget</div>
-                  <div className="font-bold text-indigo-600">₹45,000</div>
+                  <div className="font-bold text-indigo-600">PKR 45,000</div>
                 </div>
               </div>
             </div>

@@ -82,7 +82,7 @@ export default function ItineraryPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               {[
                 { icon: Calendar, label: "Duration", value: `${itinerary.totalDays} Days` },
-                { icon: Wallet, label: "Total Budget", value: `₹${totalCost.toLocaleString("en-IN")}` },
+                { icon: Wallet, label: "Total Budget", value: `PKR ${totalCost.toLocaleString("en-PK")}` },
                 { icon: MapPin, label: "Travel Month", value: itinerary.travelMonth },
                 { icon: Users, label: "Fitness", value: itinerary.fitnessLevel },
               ].map((stat) => (
@@ -174,7 +174,7 @@ export default function ItineraryPage() {
                           Day {day.day}
                         </span>
                         <span className="font-semibold text-gray-800">
-                          ₹{day.estimatedCost.toLocaleString("en-IN")}
+                          PKR {day.estimatedCost.toLocaleString("en-PK")}
                         </span>
                       </div>
                     ))}
@@ -183,7 +183,7 @@ export default function ItineraryPage() {
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-gray-900">Total</span>
                       <span className="font-black text-lg gradient-text">
-                        ₹{totalCost.toLocaleString("en-IN")}
+                        PKR {totalCost.toLocaleString("en-PK")}
                       </span>
                     </div>
                     <p className="text-xs text-gray-400 mt-1">Per person estimate</p>
@@ -240,11 +240,11 @@ export default function ItineraryPage() {
                         <polyline points="30,170 80,120 140,80 200,100 260,60" fill="none" stroke="#6366f1" strokeWidth="2.5" strokeDasharray="6,3" />
                         {/* Location pins */}
                         {[
-                          { x: 30, y: 170, label: "Delhi", color: "#10b981" },
-                          { x: 80, y: 120, label: "Kasol", color: "#6366f1" },
-                          { x: 140, y: 80, label: "Manali", color: "#6366f1" },
-                          { x: 200, y: 100, label: "Solang", color: "#6366f1" },
-                          { x: 260, y: 60, label: "Rohtang", color: "#ef4444" },
+                          { x: 30, y: 170, label: "Islamabad", color: "#10b981" },
+                          { x: 80, y: 120, label: "Gilgit", color: "#6366f1" },
+                          { x: 140, y: 80, label: "Hunza", color: "#6366f1" },
+                          { x: 200, y: 100, label: "Passu", color: "#6366f1" },
+                          { x: 260, y: 60, label: "Khunjerab", color: "#ef4444" },
                         ].map((pin) => (
                           <g key={pin.label}>
                             <circle cx={pin.x} cy={pin.y} r="6" fill={pin.color} stroke="white" strokeWidth="2" />

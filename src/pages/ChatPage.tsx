@@ -17,7 +17,7 @@ import { initialChatMessages, mockChatResponses, type ChatMessage } from "@/lib/
 import { cn } from "@/lib/utils"
 
 const quickPrompts = [
-  { icon: MapPin, text: "Best time to visit Manali?", key: "best_time" },
+  { icon: MapPin, text: "Best time to visit Hunza?", key: "best_time" },
   { icon: Wallet, text: "What's my budget estimate?", key: "budget" },
   { icon: Shield, text: "Safety tips for solo travel", key: "safety" },
   { icon: Backpack, text: "What should I pack?", key: "packing" },

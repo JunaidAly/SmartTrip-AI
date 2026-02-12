@@ -71,7 +71,7 @@ export default function DayCard({ day, index }: DayCardProps) {
               </div>
               <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-xl">
                 <DollarSign className="w-4 h-4" />
-                <span className="font-bold text-sm">₹{day.estimatedCost.toLocaleString("en-IN")}</span>
+                <span className="font-bold text-sm">PKR {day.estimatedCost.toLocaleString("en-PK")}</span>
               </div>
             </div>
 

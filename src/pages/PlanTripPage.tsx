@@ -51,7 +51,7 @@ const months = [
   "July", "August", "September", "October", "November", "December",
 ]
 
-const popularDestinations = ["Manali", "Leh-Ladakh", "Spiti Valley", "Rishikesh", "Kerala", "Goa", "Rajasthan"]
+const popularDestinations = ["Hunza", "Skardu", "Gilgit", "Fairy Meadows", "Naran", "Swat", "Khunjerab"]
 
 interface FormData {
   destination: string
@@ -202,7 +202,7 @@ export default function PlanTripPage() {
                       </Label>
                       <Input
                         id="destination"
-                        placeholder="e.g. Manali, Himachal Pradesh"
+                        placeholder="e.g. Hunza, Gilgit-Baltistan"
                         value={form.destination}
                         onChange={(e) => setForm({ ...form, destination: e.target.value })}
                         className="h-12 text-base"
@@ -280,7 +280,7 @@ export default function PlanTripPage() {
                       </Label>
                       <div className="flex items-center gap-2">
                         <span className="text-2xl font-black gradient-text">
-                          ₹{form.budget.toLocaleString("en-IN")}
+                          PKR {form.budget.toLocaleString("en-PK")}
                         </span>
                       </div>
                     </div>
@@ -293,8 +293,8 @@ export default function PlanTripPage() {
                       className="py-2"
                     />
                     <div className="flex justify-between text-xs text-gray-400 font-medium">
-                      <span>₹5,000 (Budget)</span>
-                      <span>₹1,00,000+ (Luxury)</span>
+                      <span>PKR 5,000 (Budget)</span>
+                      <span>PKR 1,00,000+ (Luxury)</span>
                     </div>
                     {/* Budget Labels */}
                     <div className="flex gap-2 flex-wrap">

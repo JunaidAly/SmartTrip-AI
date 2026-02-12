@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { Plane, Menu, X, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/plan", label: "Plan Trip" },
-  { href: "/itinerary", label: "Itinerary" },
-  { href: "/chat", label: "AI Chat" },
+  { href: "/", label: "Home", section: null },
+  { href: "/#features", label: "Features", section: "features" },
+  { href: "/#how-it-works", label: "How It Works", section: "how-it-works" },
+  { href: "/#testimonials", label: "Testimonials", section: "testimonials" },
+  { href: "/plan", label: "Plan Trip", section: null },
+  { href: "/chat", label: "AI Chat", section: null },
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -26,6 +29,40 @@ export default function Navbar() {
   useEffect(() => {
     setIsOpen(false)
   }, [location.pathname])
+
+  // After navigating to "/" with a hash, scroll to the section
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      const id = location.hash.replace("#", "")
+      const el = document.getElementById(id)
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" })
+        }, 100)
+      }
+    }
+  }, [location])
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[number]) => {
+    if (!link.section) return
+
+    e.preventDefault()
+    setIsOpen(false)
+
+    if (location.pathname === "/") {
+      // Already on home — just scroll
+      const el = document.getElementById(link.section)
+      el?.scrollIntoView({ behavior: "smooth", block: "start" })
+    } else {
+      // Navigate to home with hash, useEffect will handle scrolling
+      navigate(`/#${link.section}`)
+    }
+  }
+
+  const isActive = (link: typeof navLinks[number]) => {
+    if (link.section) return location.pathname === "/" && location.hash === `#${link.section}`
+    return location.pathname === link.href
+  }
 
   return (
     <motion.header
@@ -58,9 +95,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 to={link.href}
+                onClick={(e) => handleNavClick(e, link)}
                 className={cn(
                   "px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200",
-                  location.pathname === link.href
+                  isActive(link)
                     ? "bg-indigo-50 text-indigo-700"
                     : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                 )}
@@ -109,9 +147,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   to={link.href}
+                  onClick={(e) => handleNavClick(e, link)}
                   className={cn(
                     "flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200",
-                    location.pathname === link.href
+                    isActive(link)
                       ? "bg-indigo-50 text-indigo-700"
                       : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                   )}

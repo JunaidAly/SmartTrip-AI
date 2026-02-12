@@ -5,6 +5,7 @@ import PlanTripPage from "@/pages/PlanTripPage"
 import ItineraryPage from "@/pages/ItineraryPage"
 import ChatPage from "@/pages/ChatPage"
 import Navbar from "@/components/Navbar"
+import ScrollToTop from "@/components/ScrollToTop"
 
 function ChatPageWrapper() {
   return (
@@ -18,6 +19,7 @@ function ChatPageWrapper() {
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<LandingPage />} />

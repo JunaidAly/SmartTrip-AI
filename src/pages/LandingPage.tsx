@@ -87,24 +87,24 @@ const howItWorks = [
 
 const testimonials = [
   {
-    name: "Priya Sharma",
-    handle: "@priyatravels",
-    text: "SmartTrip AI planned my entire Ladakh trip in under 2 minutes! The budget breakdown was spot-on and the safety alerts kept me informed throughout.",
-    avatar: "PS",
+    name: "Fatima Malik",
+    handle: "@fatima_travels",
+    text: "SmartTrip AI planned my entire Hunza trip in under 2 minutes! The budget breakdown was spot-on and the safety alerts kept me informed throughout.",
+    avatar: "FM",
     gradient: "from-pink-500 to-rose-500",
   },
   {
-    name: "Arjun Mehta",
-    handle: "@arjunexplores",
-    text: "I was skeptical at first, but the AI itinerary for Spiti Valley was incredible. Every recommendation was perfectly aligned with my interests.",
-    avatar: "AM",
+    name: "Usman Khan",
+    handle: "@usmaan_explores",
+    text: "I was skeptical at first, but the AI itinerary for Skardu and Deosai Plains was incredible. Every recommendation was perfectly aligned with my interests.",
+    avatar: "UK",
     gradient: "from-indigo-500 to-blue-500",
   },
   {
-    name: "Sarah Johnson",
-    handle: "@sarahjwanders",
-    text: "As a solo traveler, the safety features are a game-changer. Real-time alerts and emergency contacts gave me peace of mind in remote areas.",
-    avatar: "SJ",
+    name: "Ayesha Siddiqui",
+    handle: "@ayesha_wanders",
+    text: "As a solo female traveler in Gilgit-Baltistan, the safety features are a game-changer. Real-time alerts and emergency contacts gave me real peace of mind.",
+    avatar: "AS",
     gradient: "from-emerald-500 to-teal-500",
   },
 ]
@@ -115,7 +115,7 @@ export default function LandingPage() {
       <HeroSection />
 
       {/* Features Section */}
-      <section className="section-padding bg-white">
+      <section id="features" className="section-padding bg-white">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <motion.div
@@ -148,7 +148,7 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="section-padding bg-gradient-to-b from-white to-indigo-50/50">
+      <section id="how-it-works" className="section-padding bg-gradient-to-b from-white to-indigo-50/50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -201,7 +201,7 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-white">
+      <section id="testimonials" className="section-padding bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
