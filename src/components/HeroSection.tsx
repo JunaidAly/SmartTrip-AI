@@ -16,9 +16,9 @@ export default function HeroSection() {
       <div className="absolute inset-0 hero-gradient" />
 
       {/* Decorative Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300/30 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-300/25 rounded-full blur-3xl animate-float [animation-delay:3s]" />
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-200/20 rounded-full blur-3xl animate-float [animation-delay:1.5s]" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300/30 dark:bg-indigo-700/20 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-300/25 dark:bg-blue-700/15 rounded-full blur-3xl animate-float [animation-delay:3s]" />
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-200/20 dark:bg-purple-700/15 rounded-full blur-3xl animate-float [animation-delay:1.5s]" />
 
       {/* Grid Pattern Overlay */}
       <div
@@ -37,7 +37,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-indigo-100 rounded-full px-4 py-1.5 text-sm font-medium text-indigo-600 shadow-sm mb-6"
+              className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-indigo-100 dark:border-indigo-800 rounded-full px-4 py-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 shadow-sm mb-6"
             >
               <Sparkles className="w-3.5 h-3.5" />
               Powered by Advanced AI
@@ -48,7 +48,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.05] tracking-tight text-gray-900 mb-6"
+              className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.05] tracking-tight text-gray-900 dark:text-white mb-6"
             >
               Plan Smarter.{" "}
               <span className="gradient-text">Travel</span>{" "}
@@ -61,7 +61,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-10 max-w-lg"
+              className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-lg"
             >
               AI-powered travel planner for personalized and safe trips. Get custom itineraries, budget estimates, and real-time safety alerts — all in one place.
             </motion.p>
@@ -100,8 +100,8 @@ export default function HeroSection() {
                 { value: "4.9★", label: "Avg Rating" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                  <p className="text-sm text-gray-500">{stat.label}</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -115,9 +115,9 @@ export default function HeroSection() {
             className="relative hidden lg:block"
           >
             {/* Main Card */}
-            <div className="relative bg-white/80 backdrop-blur-xl border border-white/50 rounded-3xl shadow-2xl shadow-indigo-100/50 p-6 ml-8">
+            <div className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-white/50 dark:border-gray-700/50 rounded-3xl shadow-2xl shadow-indigo-100/50 dark:shadow-indigo-900/20 p-6 ml-8">
               {/* Map Placeholder */}
-              <div className="w-full h-56 bg-gradient-to-br from-indigo-100 via-blue-50 to-cyan-100 rounded-2xl mb-4 overflow-hidden relative">
+              <div className="w-full h-56 bg-gradient-to-br from-indigo-100 via-blue-50 to-cyan-100 dark:from-indigo-900 dark:via-blue-950 dark:to-cyan-950 rounded-2xl mb-4 overflow-hidden relative">
                 {/* Mountain SVG */}
                 <svg viewBox="0 0 400 200" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
                   <defs>
@@ -159,7 +159,7 @@ export default function HeroSection() {
                   {[...Array(5)].map((_, i) => (
                     <div
                       key={i}
-                      className={`h-1.5 rounded-full transition-all ${i < 3 ? "bg-indigo-500 flex-1" : "bg-indigo-200 flex-1"}`}
+                      className={`h-1.5 rounded-full transition-all ${i < 3 ? "bg-indigo-500 flex-1" : "bg-indigo-200 dark:bg-indigo-700 flex-1"}`}
                     />
                   ))}
                 </div>
@@ -169,10 +169,10 @@ export default function HeroSection() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-bold text-gray-900">Hunza Adventure Trip</p>
-                    <p className="text-sm text-gray-500">7 days • June 2025</p>
+                    <p className="font-bold text-gray-900 dark:text-white">Hunza Adventure Trip</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">7 days • June 2025</p>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-900/50 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-indigo-600" />
                   </div>
                 </div>
@@ -180,14 +180,14 @@ export default function HeroSection() {
                   {["Nature", "Mountains", "Adventure"].map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs font-medium px-2.5 py-1 bg-indigo-50 text-indigo-600 rounded-full"
+                      className="text-xs font-medium px-2.5 py-1 bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-2 border-t border-gray-100">
-                  <div className="text-sm text-gray-500">Estimated Budget</div>
+                <div className="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-gray-700">
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Estimated Budget</div>
                   <div className="font-bold text-indigo-600">PKR 45,000</div>
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6 + badge.delay, duration: 0.4 }}
-                className={`absolute flex items-center gap-2 bg-white rounded-2xl px-3 py-2 shadow-lg border border-gray-100 text-sm font-medium text-gray-700 ${
+                className={`absolute flex items-center gap-2 bg-white dark:bg-gray-800 rounded-2xl px-3 py-2 shadow-lg border border-gray-100 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 ${
                   i === 0 ? "-left-6 top-8" : i === 1 ? "-right-4 top-24" : "-left-4 bottom-16"
                 }`}
               >
@@ -217,7 +217,7 @@ export default function HeroSection() {
       {/* Bottom Wave */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 60" className="w-full" preserveAspectRatio="none">
-          <path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="white" />
+          <path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" className="fill-white dark:fill-gray-950" />
         </svg>
       </div>
     </section>

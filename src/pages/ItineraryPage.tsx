@@ -29,7 +29,7 @@ export default function ItineraryPage() {
   const totalCost = itinerary.days.reduce((sum, d) => sum + d.estimatedCost, 0)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-24 pb-16">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-gray-950 dark:to-gray-950 pt-24 pb-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Back Link */}
         <motion.div
@@ -39,7 +39,7 @@ export default function ItineraryPage() {
         >
           <Link
             to="/plan"
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors font-medium"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Planning
@@ -51,7 +51,7 @@ export default function ItineraryPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative bg-gradient-to-br from-indigo-600 via-blue-600 to-indigo-700 rounded-3xl p-8 md:p-10 mb-8 overflow-hidden shadow-2xl shadow-indigo-200"
+          className="relative bg-gradient-to-br from-indigo-600 via-blue-600 to-indigo-700 rounded-3xl p-8 md:p-10 mb-8 overflow-hidden shadow-2xl shadow-indigo-200 dark:shadow-indigo-900"
         >
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/3 translate-x-1/3" />
@@ -141,7 +141,7 @@ export default function ItineraryPage() {
               transition={{ delay: 0.2 }}
               className="flex items-center gap-3 mb-6"
             >
-              <h2 className="text-2xl font-black text-gray-900">Day-by-Day Plan</h2>
+              <h2 className="text-2xl font-black text-gray-900 dark:text-white">Day-by-Day Plan</h2>
               <Badge variant="indigo" className="text-xs">
                 {itinerary.days.length} Days
               </Badge>
@@ -160,33 +160,33 @@ export default function ItineraryPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <Card className="border border-gray-100 shadow-sm sticky top-24">
+              <Card className="border border-gray-100 dark:border-gray-800 shadow-sm sticky top-24">
                 <CardContent className="p-5">
-                  <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                     <Wallet className="w-4 h-4 text-indigo-600" />
                     Budget Breakdown
                   </h3>
                   <div className="space-y-3 mb-4">
                     {itinerary.days.map((day) => (
                       <div key={day.day} className="flex items-center justify-between text-sm">
-                        <span className="text-gray-500 flex items-center gap-2">
+                        <span className="text-gray-500 dark:text-gray-400 flex items-center gap-2">
                           <div className="w-2 h-2 rounded-full bg-indigo-400" />
                           Day {day.day}
                         </span>
-                        <span className="font-semibold text-gray-800">
+                        <span className="font-semibold text-gray-800 dark:text-gray-200">
                           PKR {day.estimatedCost.toLocaleString("en-PK")}
                         </span>
                       </div>
                     ))}
                   </div>
-                  <div className="border-t border-gray-100 pt-3">
+                  <div className="border-t border-gray-100 dark:border-gray-700 pt-3">
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-gray-900">Total</span>
+                      <span className="font-bold text-gray-900 dark:text-white">Total</span>
                       <span className="font-black text-lg gradient-text">
                         PKR {totalCost.toLocaleString("en-PK")}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-400 mt-1">Per person estimate</p>
+                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">Per person estimate</p>
                   </div>
                 </CardContent>
               </Card>
@@ -198,18 +198,18 @@ export default function ItineraryPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <Card className="border border-gray-100 shadow-sm overflow-hidden">
+              <Card className="border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
                 <div
                   className="cursor-pointer"
                   onClick={() => setShowMap(!showMap)}
                 >
-                  <div className="p-4 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
-                    <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                  <div className="p-4 flex items-center justify-between bg-white hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 transition-colors">
+                    <h3 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
                       <Navigation className="w-4 h-4 text-indigo-600" />
                       Route Map
                     </h3>
                     <ChevronDown
-                      className={`w-4 h-4 text-gray-400 transition-transform ${showMap ? "rotate-180" : ""}`}
+                      className={`w-4 h-4 text-gray-400 dark:text-gray-500 transition-transform ${showMap ? "rotate-180" : ""}`}
                     />
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export default function ItineraryPage() {
                         ))}
                       </svg>
                       <div className="absolute bottom-3 left-3 right-3 text-center">
-                        <p className="text-xs text-indigo-600 font-medium bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full inline-block">
+                        <p className="text-xs text-indigo-600 dark:text-indigo-400 font-medium bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-3 py-1.5 rounded-full inline-block">
                           📍 Interactive map coming soon
                         </p>
                       </div>
@@ -271,9 +271,9 @@ export default function ItineraryPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Card className="border border-gray-100 shadow-sm">
+              <Card className="border border-gray-100 dark:border-gray-800 shadow-sm">
                 <CardContent className="p-5">
-                  <h3 className="font-bold text-gray-900 mb-4">Trip Summary</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-4">Trip Summary</h3>
                   <div className="space-y-3">
                     {[
                       { label: "Safety Warnings", value: `${itinerary.days.filter(d => d.safetyWarnings?.length).length} days`, color: "text-amber-600" },
@@ -282,7 +282,7 @@ export default function ItineraryPage() {
                       { label: "Total Activities", value: `${itinerary.days.reduce((sum, d) => sum + d.activities.length, 0)} activities`, color: "text-emerald-600" },
                     ].map((stat) => (
                       <div key={stat.label} className="flex justify-between items-center text-sm">
-                        <span className="text-gray-500">{stat.label}</span>
+                        <span className="text-gray-500 dark:text-gray-400">{stat.label}</span>
                         <span className={`font-semibold ${stat.color}`}>{stat.value}</span>
                       </div>
                     ))}

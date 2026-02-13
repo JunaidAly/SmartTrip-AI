@@ -23,7 +23,7 @@ const features = [
     title: "AI Trip Planner",
     description:
       "Generate complete day-by-day itineraries tailored to your interests, fitness level, and travel style using advanced AI.",
-    gradient: "bg-gradient-to-br from-indigo-50 to-blue-50",
+    gradient: "bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-950/50 dark:to-blue-950/50",
     iconBg: "bg-gradient-to-br from-indigo-600 to-blue-500",
   },
   {
@@ -31,7 +31,7 @@ const features = [
     title: "Smart Budget Estimator",
     description:
       "Get accurate cost breakdowns including accommodation, food, transport, and activities for any destination.",
-    gradient: "bg-gradient-to-br from-emerald-50 to-teal-50",
+    gradient: "bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/50 dark:to-teal-950/50",
     iconBg: "bg-gradient-to-br from-emerald-500 to-teal-500",
   },
   {
@@ -39,7 +39,7 @@ const features = [
     title: "Safety Alerts",
     description:
       "Real-time safety advisories, altitude sickness warnings, and local emergency contacts for worry-free travel.",
-    gradient: "bg-gradient-to-br from-rose-50 to-pink-50",
+    gradient: "bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-950/50 dark:to-pink-950/50",
     iconBg: "bg-gradient-to-br from-rose-500 to-pink-500",
   },
   {
@@ -47,7 +47,7 @@ const features = [
     title: "Interactive Travel Map",
     description:
       "Visualize your route, discover nearby attractions, and navigate with confidence using integrated maps.",
-    gradient: "bg-gradient-to-br from-amber-50 to-orange-50",
+    gradient: "bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/50 dark:to-orange-950/50",
     iconBg: "bg-gradient-to-br from-amber-500 to-orange-500",
   },
 ]
@@ -59,9 +59,9 @@ const howItWorks = [
     title: "Enter Trip Details",
     description:
       "Tell us your destination, dates, budget, and what kind of experiences you love.",
-    color: "text-indigo-600",
-    bg: "bg-indigo-50",
-    border: "border-indigo-100",
+    color: "text-indigo-600 dark:text-indigo-400",
+    bg: "bg-indigo-50 dark:bg-indigo-900/30",
+    border: "border-indigo-100 dark:border-indigo-800",
   },
   {
     step: "02",
@@ -69,9 +69,9 @@ const howItWorks = [
     title: "AI Generates Plan",
     description:
       "Our AI analyzes thousands of data points to craft a personalized, optimized itinerary in seconds.",
-    color: "text-blue-600",
-    bg: "bg-blue-50",
-    border: "border-blue-100",
+    color: "text-blue-600 dark:text-blue-400",
+    bg: "bg-blue-50 dark:bg-blue-900/30",
+    border: "border-blue-100 dark:border-blue-800",
   },
   {
     step: "03",
@@ -79,9 +79,9 @@ const howItWorks = [
     title: "Explore Safely",
     description:
       "Get your full itinerary with safety tips, cost breakdown, maps, and the ability to chat with AI anytime.",
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
-    border: "border-emerald-100",
+    color: "text-emerald-600 dark:text-emerald-400",
+    bg: "bg-emerald-50 dark:bg-emerald-900/30",
+    border: "border-emerald-100 dark:border-emerald-800",
   },
 ]
 
@@ -115,7 +115,7 @@ export default function LandingPage() {
       <HeroSection />
 
       {/* Features Section */}
-      <section id="features" className="section-padding bg-white">
+      <section id="features" className="section-padding bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <motion.div
@@ -125,15 +125,15 @@ export default function LandingPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-14"
           >
-            <span className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
               <CheckCircle2 className="w-4 h-4" />
               Everything You Need
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
               Smart features for{" "}
               <span className="gradient-text">smarter travel</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               From AI-powered planning to real-time safety alerts, we've built everything you need for an unforgettable journey.
             </p>
           </motion.div>
@@ -148,7 +148,7 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="section-padding bg-gradient-to-b from-white to-indigo-50/50">
+      <section id="how-it-works" className="section-padding bg-gradient-to-b from-white to-indigo-50/50 dark:from-gray-950 dark:to-indigo-950/20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -157,21 +157,21 @@ export default function LandingPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-14"
           >
-            <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
               <Zap className="w-4 h-4" />
               Simple Process
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
               How it <span className="gradient-text">works</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
               Plan your perfect trip in three simple steps — no travel agent required.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 relative">
             {/* Connecting Line */}
-            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-indigo-200 via-blue-200 to-emerald-200 z-0" />
+            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-indigo-200 via-blue-200 to-emerald-200 dark:from-indigo-700 dark:via-blue-700 dark:to-emerald-700 z-0" />
 
             {howItWorks.map((step, i) => (
               <motion.div
@@ -182,7 +182,7 @@ export default function LandingPage() {
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="relative z-10"
               >
-                <Card className={`border ${step.border} shadow-sm hover:shadow-lg transition-all duration-300 bg-white`}>
+                <Card className={`border ${step.border} shadow-sm hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-900`}>
                   <CardContent className="p-8 text-center">
                     <div className={`w-14 h-14 ${step.bg} rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-sm`}>
                       <step.icon className={`w-7 h-7 ${step.color}`} />
@@ -190,8 +190,8 @@ export default function LandingPage() {
                     <div className={`text-xs font-bold ${step.color} mb-1 tracking-widest`}>
                       STEP {step.step}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{step.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{step.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -201,7 +201,7 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="section-padding bg-white">
+      <section id="testimonials" className="section-padding bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -210,7 +210,7 @@ export default function LandingPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-14"
           >
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
               Loved by <span className="gradient-text">travelers</span>
             </h2>
           </motion.div>
@@ -224,16 +224,16 @@ export default function LandingPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <Card className="border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                <Card className="border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
-                    <p className="text-gray-700 text-sm leading-relaxed mb-5">"{t.text}"</p>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-5">"{t.text}"</p>
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.gradient} flex items-center justify-center text-white font-bold text-sm`}>
                         {t.avatar}
                       </div>
                       <div>
-                        <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
-                        <p className="text-xs text-gray-500">{t.handle}</p>
+                        <p className="font-semibold text-gray-900 dark:text-white text-sm">{t.name}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">{t.handle}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -252,7 +252,7 @@ export default function LandingPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative bg-gradient-to-br from-indigo-600 to-blue-600 rounded-3xl p-10 md:p-16 text-center overflow-hidden shadow-2xl shadow-indigo-200"
+            className="relative bg-gradient-to-br from-indigo-600 to-blue-600 rounded-3xl p-10 md:p-16 text-center overflow-hidden shadow-2xl shadow-indigo-200 dark:shadow-indigo-900"
           >
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/3 translate-x-1/3" />

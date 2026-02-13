@@ -110,7 +110,7 @@ export default function PlanTripPage() {
   const isFormValid = form.destination && form.fitnessLevel && form.travelMonth
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50/50 to-white pt-24 pb-16">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50/50 to-white dark:from-indigo-950/30 dark:to-gray-950 pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
@@ -119,14 +119,14 @@ export default function PlanTripPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <span className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
             <Sparkles className="w-4 h-4" />
             AI-Powered Planning
           </span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-3">
+          <h1 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-3">
             Plan Your <span className="gradient-text">Dream Trip</span>
           </h1>
-          <p className="text-gray-600 text-lg max-w-xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-xl mx-auto">
             Tell us about your dream journey and our AI will craft a perfect itinerary in seconds.
           </p>
         </motion.div>
@@ -142,7 +142,7 @@ export default function PlanTripPage() {
             >
               <div className="relative w-24 h-24 mb-8">
                 <motion.div
-                  className="absolute inset-0 rounded-full border-4 border-indigo-100"
+                  className="absolute inset-0 rounded-full border-4 border-indigo-100 dark:border-indigo-800"
                 />
                 <motion.div
                   className="absolute inset-0 rounded-full border-4 border-t-indigo-600 border-r-transparent border-b-transparent border-l-transparent"
@@ -153,12 +153,12 @@ export default function PlanTripPage() {
                   <Sparkles className="w-8 h-8 text-indigo-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Creating Your Itinerary</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Creating Your Itinerary</h3>
               <motion.p
                 key={loadingStep}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-gray-500 text-sm"
+                className="text-gray-500 dark:text-gray-400 text-sm"
               >
                 {loadingMessages[loadingStep]}
               </motion.p>
@@ -168,7 +168,7 @@ export default function PlanTripPage() {
                     key={i}
                     className={cn(
                       "h-1.5 rounded-full transition-all duration-300",
-                      i <= loadingStep ? "bg-indigo-600 w-8" : "bg-indigo-100 w-4"
+                      i <= loadingStep ? "bg-indigo-600 w-8" : "bg-indigo-100 dark:bg-indigo-800 w-4"
                     )}
                   />
                 ))}
@@ -182,10 +182,10 @@ export default function PlanTripPage() {
               exit={{ opacity: 0 }}
               onSubmit={handleSubmit}
             >
-              <Card className="border border-indigo-50 shadow-xl shadow-indigo-50/50 overflow-hidden">
+              <Card className="border border-indigo-50 shadow-xl shadow-indigo-50/50 dark:border-gray-800 dark:shadow-gray-900/50 overflow-hidden">
                 <div className="h-1 bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-600 bg-[length:200%] animate-gradient-shift" />
                 <CardHeader className="pb-0 pt-8 px-8">
-                  <CardTitle className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                  <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                     <MapPin className="w-6 h-6 text-indigo-600" />
                     Trip Details
                   </CardTitle>
@@ -196,7 +196,7 @@ export default function PlanTripPage() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     {/* Destination */}
                     <div className="sm:col-span-2 space-y-2">
-                      <Label htmlFor="destination" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                      <Label htmlFor="destination" className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
                         <MapPin className="w-3.5 h-3.5 text-indigo-500" />
                         Destination *
                       </Label>
@@ -219,7 +219,7 @@ export default function PlanTripPage() {
                               "text-xs px-3 py-1.5 rounded-full border transition-all duration-200 cursor-pointer font-medium",
                               form.destination === dest
                                 ? "bg-indigo-600 text-white border-indigo-600"
-                                : "border-gray-200 text-gray-500 hover:border-indigo-300 hover:text-indigo-600"
+                                : "border-gray-200 text-gray-500 hover:border-indigo-300 hover:text-indigo-600 dark:border-gray-700 dark:text-gray-400 dark:hover:border-indigo-600 dark:hover:text-indigo-400"
                             )}
                           >
                             {dest}
@@ -230,7 +230,7 @@ export default function PlanTripPage() {
 
                     {/* Days */}
                     <div className="space-y-2">
-                      <Label htmlFor="days" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                      <Label htmlFor="days" className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
                         <Calendar className="w-3.5 h-3.5 text-indigo-500" />
                         Number of Days
                       </Label>
@@ -244,7 +244,7 @@ export default function PlanTripPage() {
                           onChange={(e) => setForm({ ...form, days: parseInt(e.target.value) || 1 })}
                           className="h-12 text-base pr-16"
                         />
-                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-400 font-medium">
+                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-400 dark:text-gray-500 font-medium">
                           days
                         </span>
                       </div>
@@ -252,7 +252,7 @@ export default function PlanTripPage() {
 
                     {/* Travelers */}
                     <div className="space-y-2">
-                      <Label className="text-sm font-semibold text-gray-700">Travelers</Label>
+                      <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Travelers</Label>
                       <Select
                         value={String(form.travelersCount)}
                         onValueChange={(v) => setForm({ ...form, travelersCount: parseInt(v) })}
@@ -274,7 +274,7 @@ export default function PlanTripPage() {
                   {/* Budget Slider */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <Label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                      <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
                         <Wallet className="w-3.5 h-3.5 text-indigo-500" />
                         Budget per Person
                       </Label>
@@ -292,7 +292,7 @@ export default function PlanTripPage() {
                       onValueChange={([val]) => setForm({ ...form, budget: val })}
                       className="py-2"
                     />
-                    <div className="flex justify-between text-xs text-gray-400 font-medium">
+                    <div className="flex justify-between text-xs text-gray-400 dark:text-gray-500 font-medium">
                       <span>PKR 5,000 (Budget)</span>
                       <span>PKR 1,00,000+ (Luxury)</span>
                     </div>
@@ -317,9 +317,9 @@ export default function PlanTripPage() {
 
                   {/* Interests */}
                   <div className="space-y-3">
-                    <Label className="text-sm font-semibold text-gray-700">
+                    <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                       Interests{" "}
-                      <span className="text-gray-400 font-normal">(select all that apply)</span>
+                      <span className="text-gray-400 dark:text-gray-500 font-normal">(select all that apply)</span>
                     </Label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {interests.map((interest) => {
@@ -333,15 +333,15 @@ export default function PlanTripPage() {
                             className={cn(
                               "flex items-center gap-3 p-3.5 rounded-xl border-2 text-sm font-medium transition-all duration-200 text-left",
                               isSelected
-                                ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-                                : "border-gray-200 bg-white text-gray-600 hover:border-indigo-200 hover:bg-indigo-50/50"
+                                ? "border-indigo-500 bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300"
+                                : "border-gray-200 bg-white text-gray-600 hover:border-indigo-200 hover:bg-indigo-50/50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-indigo-700 dark:hover:bg-indigo-900/30"
                             )}
                           >
                             <div className={cn(
                               "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0",
-                              isSelected ? "bg-indigo-600" : "bg-gray-100"
+                              isSelected ? "bg-indigo-600" : "bg-gray-100 dark:bg-gray-700"
                             )}>
-                              <interest.icon className={cn("w-4 h-4", isSelected ? "text-white" : "text-gray-500")} />
+                              <interest.icon className={cn("w-4 h-4", isSelected ? "text-white" : "text-gray-500 dark:text-gray-400")} />
                             </div>
                             {interest.label}
                           </motion.button>
@@ -354,7 +354,7 @@ export default function PlanTripPage() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     {/* Fitness Level */}
                     <div className="space-y-3">
-                      <Label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                      <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
                         <Activity className="w-3.5 h-3.5 text-indigo-500" />
                         Fitness Level *
                       </Label>
@@ -365,8 +365,8 @@ export default function PlanTripPage() {
                             className={cn(
                               "flex flex-col p-3 rounded-xl border-2 cursor-pointer transition-all duration-200",
                               form.fitnessLevel === level.value
-                                ? "border-indigo-500 bg-indigo-50"
-                                : "border-gray-200 hover:border-indigo-200"
+                                ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/30"
+                                : "border-gray-200 hover:border-indigo-200 dark:border-gray-700 dark:hover:border-indigo-700"
                             )}
                           >
                             <input
@@ -379,11 +379,11 @@ export default function PlanTripPage() {
                             />
                             <span className={cn(
                               "text-sm font-semibold",
-                              form.fitnessLevel === level.value ? "text-indigo-700" : "text-gray-700"
+                              form.fitnessLevel === level.value ? "text-indigo-700" : "text-gray-700 dark:text-gray-300"
                             )}>
                               {level.label}
                             </span>
-                            <span className="text-xs text-gray-400 mt-0.5 leading-tight">{level.desc}</span>
+                            <span className="text-xs text-gray-400 dark:text-gray-500 mt-0.5 leading-tight">{level.desc}</span>
                           </label>
                         ))}
                       </div>
@@ -391,7 +391,7 @@ export default function PlanTripPage() {
 
                     {/* Travel Month */}
                     <div className="space-y-2">
-                      <Label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                      <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
                         <Calendar className="w-3.5 h-3.5 text-indigo-500" />
                         Travel Month *
                       </Label>
@@ -412,9 +412,9 @@ export default function PlanTripPage() {
                       </Select>
 
                       {/* Info Box */}
-                      <div className="flex gap-2 p-3 bg-blue-50 rounded-xl mt-3">
+                      <div className="flex gap-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl mt-3">
                         <Info className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
-                        <p className="text-xs text-blue-700 leading-relaxed">
+                        <p className="text-xs text-blue-700 dark:text-blue-400 leading-relaxed">
                           Travel month affects weather conditions, crowd levels, and available activities at your destination.
                         </p>
                       </div>
@@ -447,7 +447,7 @@ export default function PlanTripPage() {
                         )}
                       </Button>
                     </motion.div>
-                    <p className="text-center text-xs text-gray-400 mt-3">
+                    <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-3">
                       Takes about 5 seconds • No account required
                     </p>
                   </div>

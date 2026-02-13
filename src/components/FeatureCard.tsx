@@ -36,11 +36,11 @@ export default function FeatureCard({
           </div>
 
           {/* Content */}
-          <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
-          <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{description}</p>
 
           {/* Decorative corner */}
-          <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full bg-white/30 group-hover:scale-150 transition-transform duration-500" />
+          <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full bg-white/30 dark:bg-white/10 group-hover:scale-150 transition-transform duration-500" />
         </CardContent>
       </Card>
     </motion.div>

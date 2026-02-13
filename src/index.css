@@ -26,6 +26,28 @@
     --radius: 1rem;
   }
 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 235 86% 65%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 235 86% 65%;
+  }
+
   * {
     @apply border-border;
   }
@@ -33,6 +55,7 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   html {
@@ -42,7 +65,7 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-white/20;
+    @apply bg-white/80 backdrop-blur-md border border-white/20 dark:bg-gray-900/80 dark:border-gray-700/30;
   }
 
   .glass-dark {
@@ -50,13 +73,17 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-blue-400;
   }
 
   .hero-gradient {
     background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 30%, #dbeafe 60%, #f0f9ff 100%);
     background-size: 400% 400%;
     animation: gradient-shift 8s ease infinite;
+  }
+
+  :is(.dark .hero-gradient) {
+    background: linear-gradient(135deg, #1e1b4b 0%, #1e3a5f 30%, #172554 60%, #0f172a 100%);
   }
 
   .card-hover {
@@ -83,5 +110,17 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4338ca;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #6366f1;
 }

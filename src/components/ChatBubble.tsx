@@ -39,8 +39,8 @@ export default function ChatBubble({ message, isNew = false }: ChatBubbleProps) 
         className={cn(
           "max-w-[75%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm",
           isUser
-            ? "bg-gradient-to-br from-indigo-600 to-blue-500 text-white rounded-br-sm shadow-indigo-200"
-            : "bg-white border border-gray-100 text-gray-800 rounded-bl-sm"
+            ? "bg-gradient-to-br from-indigo-600 to-blue-500 text-white rounded-br-sm shadow-indigo-200 dark:shadow-indigo-900"
+            : "bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-sm"
         )}
       >
         {message.content}

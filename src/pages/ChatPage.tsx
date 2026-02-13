@@ -29,7 +29,7 @@ function TypingIndicator() {
       <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
         <Plane className="w-4 h-4 text-white" strokeWidth={2.5} />
       </div>
-      <div className="bg-white border border-gray-100 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
+      <div className="bg-white border border-gray-100 dark:bg-gray-800 dark:border-gray-700 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
         <div className="flex gap-1.5 items-center h-5">
           {[0, 0.2, 0.4].map((delay) => (
             <motion.div
@@ -130,19 +130,19 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50/40 to-white flex flex-col pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50/40 to-white dark:from-indigo-950/20 dark:to-gray-950 flex flex-col pt-20">
       {/* Fixed Header */}
-      <div className="border-b border-gray-100 bg-white/80 backdrop-blur-lg sticky top-16 z-40">
+      <div className="border-b border-gray-100 bg-white/80 dark:border-gray-800 dark:bg-gray-900/80 backdrop-blur-lg sticky top-16 z-40">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center shadow-lg shadow-indigo-200">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center shadow-lg shadow-indigo-200 dark:shadow-indigo-900">
               <Plane className="w-5 h-5 text-white" strokeWidth={2.5} />
             </div>
             <div>
-              <h1 className="font-bold text-gray-900 text-sm leading-none">SmartTrip AI</h1>
+              <h1 className="font-bold text-gray-900 dark:text-white text-sm leading-none">SmartTrip AI</h1>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-xs text-gray-500">Online • Travel Expert</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">Online • Travel Expert</span>
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function ChatPage() {
               variant="ghost"
               size="sm"
               onClick={clearChat}
-              className="text-gray-400 hover:text-gray-600 gap-1.5 text-xs"
+              className="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 gap-1.5 text-xs"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               Clear
@@ -168,11 +168,11 @@ export default function ChatPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-8"
         >
-          <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 text-xs font-semibold px-3 py-1.5 rounded-full mb-3">
+          <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             AI-Powered Travel Assistant
           </div>
-          <p className="text-xs text-gray-400 max-w-sm mx-auto">
+          <p className="text-xs text-gray-400 dark:text-gray-500 max-w-sm mx-auto">
             Ask anything about travel planning, destinations, safety, budgets, and more.
           </p>
         </motion.div>
@@ -219,13 +219,13 @@ export default function ChatPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => sendMessage(prompt.text)}
-                  className="flex items-center gap-2.5 p-3 bg-white border border-gray-100 rounded-2xl text-sm text-gray-700 hover:bg-indigo-50 hover:border-indigo-200 hover:text-indigo-700 transition-all duration-200 text-left group shadow-sm"
+                  className="flex items-center gap-2.5 p-3 bg-white border border-gray-100 rounded-2xl text-sm text-gray-700 hover:bg-indigo-50 hover:border-indigo-200 hover:text-indigo-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-indigo-900/30 dark:hover:border-indigo-700 dark:hover:text-indigo-400 transition-all duration-200 text-left group shadow-sm"
                 >
-                  <div className="w-7 h-7 bg-indigo-50 group-hover:bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors">
+                  <div className="w-7 h-7 bg-indigo-50 group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:group-hover:bg-indigo-800/50 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors">
                     <prompt.icon className="w-3.5 h-3.5 text-indigo-600" />
                   </div>
                   <span className="text-xs font-medium flex-1">{prompt.text}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-indigo-400 transition-colors flex-shrink-0" />
+                  <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-indigo-400 dark:text-gray-600 transition-colors flex-shrink-0" />
                 </motion.button>
               ))}
             </motion.div>
@@ -234,9 +234,9 @@ export default function ChatPage() {
       </div>
 
       {/* Input Area — Sticky Bottom */}
-      <div className="sticky bottom-0 bg-white/90 backdrop-blur-lg border-t border-gray-100 px-4 py-4">
+      <div className="sticky bottom-0 bg-white/90 backdrop-blur-lg border-t border-gray-100 dark:bg-gray-900/90 dark:border-gray-800 px-4 py-4">
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-end gap-2 bg-white border border-gray-200 rounded-2xl p-2 shadow-lg shadow-gray-100/50 focus-within:border-indigo-300 focus-within:shadow-indigo-50/50 transition-all duration-200">
+          <div className="flex items-end gap-2 bg-white border border-gray-200 rounded-2xl p-2 shadow-lg shadow-gray-100/50 focus-within:border-indigo-300 focus-within:shadow-indigo-50/50 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-900/50 dark:focus-within:shadow-indigo-900/30 transition-all duration-200">
             <input
               ref={inputRef}
               type="text"
@@ -244,7 +244,7 @@ export default function ChatPage() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask about destinations, budget, safety..."
-              className="flex-1 bg-transparent px-2 py-1.5 text-sm text-gray-800 placeholder-gray-400 outline-none resize-none"
+              className="flex-1 bg-transparent px-2 py-1.5 text-sm text-gray-800 placeholder-gray-400 dark:text-gray-200 dark:placeholder-gray-500 outline-none resize-none"
               disabled={isTyping}
             />
             <motion.button
@@ -256,13 +256,13 @@ export default function ChatPage() {
                 "w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-200",
                 input.trim() && !isTyping
                   ? "bg-gradient-to-br from-indigo-600 to-blue-500 text-white shadow-lg shadow-indigo-200 hover:shadow-xl"
-                  : "bg-gray-100 text-gray-400 cursor-not-allowed"
+                  : "bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-500 cursor-not-allowed"
               )}
             >
               <Send className="w-4 h-4" />
             </motion.button>
           </div>
-          <p className="text-center text-xs text-gray-400 mt-2">
+          <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-2">
             SmartTrip AI may make mistakes. Verify important travel information.
           </p>
         </div>
